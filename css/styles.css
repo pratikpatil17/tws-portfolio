@@ -6,13 +6,8 @@ body {
     margin: 0;
     scroll-behavior: smooth;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-
-a { color: #0d6efd; text-decoration: none; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; font-weight:700; }
+a { color: #0d6efd; text-decoration:none; }
 a:hover { color: #0a58ca; }
 
 /* Navbar */
@@ -23,29 +18,47 @@ a:hover { color: #0a58ca; }
 .navbar-nav .nav-link:hover { color: #0d6efd; }
 
 /* Masthead */
-.masthead { height: 100vh; min-height: 500px; background-color: #0d6efd; color: #fff; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.masthead { height: 90vh; min-height: 500px; background: linear-gradient(to right, #0d6efd, #4e9cf8); color: #fff; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 2rem; }
 .masthead-avatar { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 1rem; border: 5px solid #fff; }
-.masthead-heading { font-size: 2.5rem; margin: 1rem 0; }
-.masthead-subheading { font-size: 1.2rem; font-weight: 300; }
+.masthead-heading { font-size: 3rem; margin: 1rem 0; }
+.masthead-subheading { font-size: 1.3rem; font-weight: 300; margin-bottom: 1rem; }
+.contact-header a { color: #fff; text-decoration: underline; }
 
 /* Divider */
-.divider-custom { display: flex; align-items: center; justify-content: center; margin: 1.5rem 0; }
-.divider-custom-line { width: 100px; height: 1px; background-color: #fff; margin: 0 0.5rem; }
-.divider-custom-icon i { font-size: 2rem; }
+.divider-custom { display:flex; align-items:center; justify-content:center; margin:1.5rem 0; }
+.divider-custom-line { width: 100px; height: 1px; background-color:#333; margin:0 0.5rem; }
+.divider-custom-icon i { font-size:2rem; }
 
 /* Sections */
-.page-section { padding: 6rem 0; }
-.page-section h2 { margin-bottom: 3rem; }
-.experience-item, .project-item { margin-bottom: 2rem; text-align: left; }
-.skills-list, .contact-info { list-style: none; padding: 0; }
-.skills-list li, .contact-info li { margin-bottom: 0.5rem; font-size: 1rem; }
-.contact-info li i { margin-right: 0.5rem; }
+.page-section { padding: 6rem 2rem; }
+.page-section h2 { margin-bottom: 3rem; text-align: center; }
+
+/* Experience Cards */
+.experience-card { background-color: #fff; border-radius:10px; padding:2rem; margin-bottom:2rem; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+.experience-card ul { padding-left: 1.2rem; }
+
+/* Skills Grid */
+.skills-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+.skill-item { background-color: #fff; color:#333; border-radius:10px; padding:1rem; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s; }
+.skill-item:hover { transform: translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+
+/* Projects Grid */
+.projects-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
+.project-card { background-color: #fff; border-radius:10px; padding:2rem; text-align:left; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s; }
+.project-card:hover { transform: translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+
+/* Contact Grid */
+.contact-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-top:1rem; }
+.contact-card { background-color:#fff; color:#333; border-radius:10px; padding:1rem 2rem; display:flex; align-items:center; gap:0.5rem; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s; }
+.contact-card:hover { transform: translateY(-3px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+.contact-card a { color: #0d6efd; text-decoration: none; }
+.contact-card a:hover { text-decoration: underline; }
 
 /* Footer */
-.footer { background-color: #212529; color: #fff; padding: 2rem 0; }
+.footer { background-color: #212529; color: #fff; padding: 2rem 0; text-align:center; }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .masthead-heading { font-size: 2rem; }
-    .masthead-subheading { font-size: 1rem; }
+@media(max-width:768px){
+    .masthead-heading{ font-size:2rem; }
+    .masthead-subheading{ font-size:1rem; }
 }

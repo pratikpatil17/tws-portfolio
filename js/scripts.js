@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', event => {
-    // Navbar shrink
     const navbarShrink = () => {
         const navbar = document.body.querySelector('#mainNav');
         if (!navbar) return;
@@ -9,14 +8,11 @@ window.addEventListener('DOMContentLoaded', event => {
     navbarShrink();
     document.addEventListener('scroll', navbarShrink);
 
-    // Collapse responsive navbar
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const navLinks = document.querySelectorAll('#navbarResponsive .nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
+            if (window.getComputedStyle(navbarToggler).display !== 'none') navbarToggler.click();
         });
     });
 });
