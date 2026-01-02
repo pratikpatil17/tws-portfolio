@@ -1,51 +1,54 @@
 /*!
-* Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+ * Portfolio Scripts
+ * Author: Pratik Patil
+ * Description: Handles navbar behavior and navigation interactions
+ */
 
-window.addEventListener('DOMContentLoaded', event => {
+window.addEventListener("DOMContentLoaded", () => {
 
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
+    /**
+     * Shrink navbar when page is scrolled
+     */
+    const handleNavbarShrink = () => {
+        const navbar = document.querySelector("#mainNav");
+        if (!navbar) return;
+
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+            navbar.classList.remove("navbar-shrink");
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navbar.classList.add("navbar-shrink");
         }
-
     };
 
-    // Shrink the navbar 
-    navbarShrink();
+    // Run on page load
+    handleNavbarShrink();
 
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
+    // Run on scroll
+    document.addEventListener("scroll", handleNavbarShrink);
 
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
+    /**
+     * Enable Bootstrap ScrollSpy
+     */
+    const mainNav = document.querySelector("#mainNav");
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            rootMargin: '0px 0px -40%',
+            target: "#mainNav",
+            rootMargin: "0px 0px -40%",
         });
-    };
+    }
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+    /**
+     * Collapse mobile navbar after clicking a link
+     */
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navLinks = document.querySelectorAll("#navbarResponsive .nav-link");
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            if (
+                navbarToggler &&
+                window.getComputedStyle(navbarToggler).display !== "none"
+            ) {
                 navbarToggler.click();
             }
         });
